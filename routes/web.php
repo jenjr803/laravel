@@ -22,3 +22,7 @@ Route::get('/', function () {
 Route::resource('bikes', BikeController::class);
 Route::get('student', [StudentController::class, 'index']);
 Route::get('student/{number}', [StudentController::class, 'test']);
+
+Route::get('/student/{name}/{num}',[StudentController::class, 'getByUrl']);
+Route::get('/student',[StudentController::class, 'index'])->name('student123');
+

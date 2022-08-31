@@ -13,7 +13,7 @@ class BikeController extends Controller
      */
     public function index()
     {
-        return view('bike.index');       
+        return view('bikes.index');       
     }
 
     /**
@@ -56,7 +56,7 @@ class BikeController extends Controller
      */
     public function edit($id)
     {
-        dd($id);
+        return view('/bikes.edit', ['id'=>$id]);
     }
 
     /**

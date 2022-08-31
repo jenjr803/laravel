@@ -32,5 +32,23 @@
 </div>
 <br>
 <div class="aa">
-    <a href="{{route('bikes.edit',['bike'=>1])}}">edit btn</a>
+    <a href="{{route('bikes.edit',['bike'=>1,'test'=>123])}}">edit btn</a>
 </div>
+
+<a href="{{route('student')}}">student btn</a> --}}
+<br>
+{{$data['v1']}}
+<br>
+{{$data['v2']}}
+<br>
+
+    
+    @for($i=1; $i<=10; $i++)
+        <a href="{{route('bikes.edit',['bike'=>$i])}}">
+        <button>edit{{$i}}</button>
+        </a>
+    @endfor
+
+    @foreach ($data['myArr'] as $key => $value)
+    <a href="http://">{{$value}}</a>
+    @endforeach
