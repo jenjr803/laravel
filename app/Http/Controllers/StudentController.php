@@ -21,7 +21,16 @@ class StudentController extends Controller
     }
 
     public function store(Request $request){
-        dd($request-> all());
+        $student = new Student;
+ 
+        $student->id = $request->id;
+        $student->name = $request->name;
+        $student->chinese = $request->chinese;
+        $student->english = $request->english;
+        $student->math = $request->math;
+        $student->save();
+        // 導回首頁
+        return redirect()->route('student.index');
     }
 
     public function test(Request $request)

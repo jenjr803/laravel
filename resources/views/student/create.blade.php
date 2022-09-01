@@ -30,7 +30,7 @@
                     <input type="number" name="english" id="english">
                 </td>
                 <td>
-                    <input type="number" name="submit" id="submit">
+                    <input type="number" name="math" id="math">
                 </td>
             </tr>
             <tr>
