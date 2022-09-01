@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('bikes', BikeController::class);
+
 Route::get('student', [StudentController::class, 'index']);
 Route::get('student/{number}', [StudentController::class, 'test']);
 

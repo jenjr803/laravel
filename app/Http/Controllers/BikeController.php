@@ -13,7 +13,14 @@ class BikeController extends Controller
      */
     public function index()
     {
-        return view('bikes.index');       
+        // return view('bikes.index');    
+        $myArr = [1,2,3];
+        $data = [
+            'myArr' => $myArr,
+            'v1' => 11,
+            'v2' => 12
+        ];
+        return view('bikes.index',['data'=>$data]);
     }
 
     /**
