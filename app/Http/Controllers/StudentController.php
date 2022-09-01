@@ -16,6 +16,13 @@ class StudentController extends Controller
         return view('student.index', ['data'=>$data]);        
     }
 
+    public function create(){
+        return view('student.create');
+    }
+
+    public function store(Request $request){
+        dd($request-> all());
+    }
 
     public function test(Request $request)
     {

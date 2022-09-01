@@ -20,10 +20,13 @@ Route::get('/', function () {
 });
 
 Route::resource('bikes', BikeController::class);
+// Route::resource('student', StudentController::class);
+Route::resource('student', StudentController::class);
 
 Route::get('student', [StudentController::class, 'index']);
 Route::get('student/{number}', [StudentController::class, 'test']);
 
 Route::get('/student/{name}/{num}',[StudentController::class, 'getByUrl']);
+Route::get('/student',[StudentController::class, 'index'])->name('student123');
 Route::get('/student',[StudentController::class, 'index'])->name('student123');
 
