@@ -15,7 +15,7 @@
                 <th>數學</th>
             </tr>
         </thead>
-        <form action="{{route('student.store')}}" method="post">
+        <form action="{{route('students.store')}}" method="post">
             {{-- @csrf 安全機制 --}}
             @csrf
         <tbody>

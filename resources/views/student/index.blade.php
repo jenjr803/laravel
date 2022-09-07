@@ -16,7 +16,7 @@
 
 <body>
     <h2 class="text-center">這是studentController</h2>
-    <a href="{{route('student.create')}}" class="mb-3 btn btn-success" role="button">add</a>
+    <a href="{{route('students.create')}}" class="mb-3 btn btn-success" role="button">add</a>
     <div class="container">
         <table class="table table-dark table-striped">
             <thead>
@@ -27,6 +27,7 @@
                     <th>數學</th>
                     <th>建立時間</th>
                     <th>更新時間</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +39,15 @@
                         <td>{{ $student->math }}</td>
                         <td>{{ $student->created_at }}</td>
                         <td>{{ $student->updated_at }}</td>
+                        <td>
+                            <a href="{{route('students.edit', ['student'=>$student->id])}}">編輯</a>
+                            
+                            <form action="{{route('students.destroy',['student'=>$student->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" class="btn btn-danger" value="del">
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
 

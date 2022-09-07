@@ -21,7 +21,7 @@ class StudentController extends Controller
     }
 
     public function store(Request $request){
-        $student = new Student;
+        $student = new Student();
  
         $student->id = $request->id;
         $student->name = $request->name;
@@ -30,7 +30,31 @@ class StudentController extends Controller
         $student->math = $request->math;
         $student->save();
         // 導回首頁
-        return redirect()->route('student.index');
+        return redirect()->route('students.index');
+    }
+
+    public function edit($id){
+        $data = Student::find($id);
+        return view('student.edit', ['data'=>$data]);
+    }
+
+    public function update(Request $input, $id){
+      
+        $data = Student::where('id', $id)->first();
+
+        $data -> name = $input['name'];
+        $data -> chinese = $input['chinese'];
+        $data -> english = $input['english'];
+        $data -> math = $input['math'];
+
+        $data -> save();
+        return redirect()->route('students.index');
+    }
+
+    public function destroy($id){
+        $data = Student::find($id);
+        $data->delete();
+        return redirect()->route('students.index');
     }
 
     public function test(Request $request)
